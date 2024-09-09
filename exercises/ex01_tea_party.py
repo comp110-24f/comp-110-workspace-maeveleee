@@ -10,6 +10,9 @@ def main_planner(guests: int) -> None:
     print("Tea Bags: " + str(tea_bags(people=guests)))
     print("Treats: " + str(treats(people=guests)))
     print("Cost: $" + str(cost(tea_count=tea_bags(people=guests), treat_count=treats(people=guests))))
+    #use str() to convert called functions into string other then ""
+    #you need to include spaces inside the ""
+    #is there a way to use one print() to print the whole four lines of code?
 
 
 def tea_bags(people: int) -> int:
@@ -20,6 +23,7 @@ def tea_bags(people: int) -> int:
 def treats(people:int) -> int:
     """how many treats are needed based on the number of guests"""
     return int(tea_bags(people=people) * 1.5)
+#you're assigning people from treats function to people from tea_bags function
 
 
 def cost(tea_count: int, treat_count: int) -> float:
