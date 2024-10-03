@@ -1,9 +1,11 @@
-print(3)
-print(type(3))
-print(str(3))
-print(type(str(3)))
+def get_weather_report() -> str:
+    weather : str = input("What is the weather?")
+    if weather == "rainy" or weather == "cold":
+        print("Bring a jacket!")
+    elif weather == "hot":
+        print("Keep cool out there!")
+    else:
+        print("I don't recognize this weather.")
+    return weather
 
-
-def sum(num1: int, num2: int) -> int:
-    """Add two integers together"""
-    return num1 + num2
+print(get_weather_report())
