@@ -3,6 +3,10 @@
 __author__ = "730824450"
 
 def all(list1 : list[int], int1 : int) -> bool:
+    if len(list1) == 0:  
+        return False
+    #return False when the list is empty
+    
     i = 0
     while i < len(list1):
         if list1[i] != int1:
@@ -16,7 +20,8 @@ def max(list1 : list[int]) -> int:
         raise ValueError("max() arg is an empty List")
         #raise an error when the list in empty
     
-    max_num : int = 0
+    max_num : int = list1[0]
+    #instead of assigning it to 0, it counts for negative numbers
     for elem in list1:
         if elem > max_num:
             max_num = elem
