@@ -2,13 +2,14 @@
 __author__ = "730824450"
 
 def only_evens(list1 : list[int]) -> list[int]:
-    #modifies the list so that only even numbers would be in the list
+    #creates a new list with only even numbers
+    list2 : list[int] = []
     i = 0
     while i < len(list1):
-        if list1[i] % 2 == 1:
-            list1.pop(i)
+        if list1[i] % 2 == 0:
+            list2.append(list1[i])
         i += 1
-    return list1
+    return list2
 
 def sub(list1 : list[int], start : int, end: int) -> list[int]:
     #generates the subset of the list
@@ -24,18 +25,19 @@ def sub(list1 : list[int], start : int, end: int) -> list[int]:
     #adjusting the range of the list
     
     list2 : list[int] = []
-    for num in range(start, end):
-        list2.append(num)
+    for i in range(start, end):
+        list2.append(list1[i])
+
     return list2
     
 
 def add_at_index(list1 : list[int], elem : int, ind : int) -> None:
-    if ind < 0 or ind >= len(list1):
+    if ind < 0 or ind > len(list1):
         raise IndexError("Index is out of bounds for the input list")
 
     list1.append(0)
 
-    for i in range(ind, len(list1)):
+    for i in range(len(list1) - 1, ind, -1):
         list1[i] = list1[i - 1]
     
     list1[ind] = elem

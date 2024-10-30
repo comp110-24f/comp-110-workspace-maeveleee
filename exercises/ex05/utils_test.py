@@ -11,8 +11,7 @@ def test_only_evens_use1() -> None:
 def test_only_evens_use2() -> None:
     #use case 2 for only_evens
     list1 = [34209, 423, 334, 3234, 335]
-    only_evens(list1)
-    assert list1 == [334, 3234]
+    assert only_evens(list1) == [334, 3234]
 
 def test_only_evens_edge() -> None:
     #edge case for only_evens
@@ -23,7 +22,7 @@ def test_sub_use1() -> None:
     #use case 1 for sub
     list1 = [1, 2, 3, 4, 5]
     start = 1
-    end = 3
+    end = 2
     assert sub(list1, start, end) == [2]
 
 def test_sub_use2() -> None:
@@ -40,8 +39,7 @@ def test_sub_edge1() -> None:
     list1 = [1, 2, 3, 4, 5]
     start = 4
     end = 1
-    sub(list1, start, end)
-    assert list1 == []
+    assert sub(list1, start, end) == []
 
 def test_sub_edge2() -> None:
     #edge case 2 for sub when it's an empty set
@@ -55,7 +53,8 @@ def test_add_at_index_use1() -> None:
     list1 = [1, 2, 3, 4, 5]
     elem = 1
     ind = 3
-    assert add_at_index(list1, elem, ind) == [1, 2, 3, 1, 4, 5]
+    add_at_index(list1, elem, ind)
+    assert list1 == [1, 2, 3, 1, 4, 5]
 
 def test_add_at_index_use2() -> None:
     #use case 2 for add_at_index
